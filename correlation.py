@@ -5,8 +5,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def correlation():
-    df = pd.read_csv('joined_data.csv')
+def correlation(joined_data_input):
+    
+    '''
+        This function allows to look at the correlation between each ticker and display through a heatmap.
+        Ex.
+            correlation('joined_data.csv')
+    
+    '''
+    df = pd.read_csv(joined_data_input)
     df_corr = df.corr()
     data = df_corr.values
     fig = plt.figure()
